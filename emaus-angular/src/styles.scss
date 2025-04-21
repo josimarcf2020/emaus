@@ -1,3 +1,9 @@
+$custom-app-primary: rgb(0,51,102);
+$custom-app-secondary: rgb(200,0,0);
+$custom-app-background: rgb(223, 226, 230);
+
+$custom-theme: mat-light-theme($custom-app-primary, $custom-app-secondary, $custom-app-background);
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
