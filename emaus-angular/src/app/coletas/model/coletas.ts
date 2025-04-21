@@ -7,5 +7,6 @@ export interface Coletas {
   uf: string;
   cep: string;
   email: string;
+  select: boolean;
 }
 

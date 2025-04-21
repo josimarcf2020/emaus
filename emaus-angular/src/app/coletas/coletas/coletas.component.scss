@@ -1,5 +1,7 @@
 table {
   background-color: rgb(206, 220, 247);
+  border: solid;
+  border-width: 1px;
   width: 100%;
 }
 
@@ -11,4 +13,6 @@ mat-card {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 10px;
 }

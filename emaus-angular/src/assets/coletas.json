@@ -1,18 +1,18 @@
 [
   {
     "_id": "1", "nome": "Maria Valentina", "endereco": "Rua Liberato Barroso 1425", "bairro": "centro", "cep": "60030-161", "email": "mvalentina@gmail.com",
-    "cidade": "Fortaleza", "uf": "CE"
+    "cidade": "Fortaleza", "uf": "CE", "select": false
   },
   {
     "_id": "2", "nome": "Camila Rafaela", "endereco": "Rua Liberato Barroso 1425", "bairro": "centro", "cep": "60030-161", "email": "crafaela@gmail.com",
-    "cidade": "Teresina", "uf": "PI"
+    "cidade": "Teresina", "uf": "PI", "select": false
   },
   {
     "_id": "3", "nome": "Clóvis Rafael", "endereco": "Rua Sotero Vaz da Silveira 125", "bairro": "Vila Operária", "cep": "60030-161", "email": "crafaeli@gmail.com",
-    "cidade": "Campo Maior", "uf": "PI"
+    "cidade": "Campo Maior", "uf": "PI", "select": false
   },
   {
     "_id": "4", "nome": "Josiane Sousa", "endereco": "Rua Frederico de Andrade, 117, apto 201", "bairro": "Álvaro Weyne", "cep": "60.335-380", "email": "josySousa@gmail.com",
-    "cidade": "Fortaleza", "uf": "CE"
+    "cidade": "Fortaleza", "uf": "CE", "select": false
   }
 ]

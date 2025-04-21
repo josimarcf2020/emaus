@@ -14,7 +14,6 @@ export class ColetasServiceService {
   coletas_list() {
     return this.httpClient.get<Coletas[]>(this.API).pipe(
       first(),
-      delay(5000),
       tap(coletas => console.log(coletas))
     );
   }

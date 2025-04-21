@@ -7,27 +7,39 @@
   <div *ngIf="coletas$ | async as coletas; else loading">
 
     <table mat-table [dataSource]="coletas" class="mat-elevation-z8">
+
+      <!-- select Column -->
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef> <strong>CHECK</strong> </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-checkbox [checked]=element.select
+            (change)="onSelectChange(element, $event)"
+            aria-label="Selecionar Coleta">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
       <!-- doador Column -->
       <ng-container matColumnDef="nome">
-        <th mat-header-cell *matHeaderCellDef> <strong>Nome</strong> </th>
+        <th mat-header-cell *matHeaderCellDef> <strong>NOME</strong> </th>
         <td mat-cell *matCellDef="let element"> {{ element.nome }} </td>
       </ng-container>
 
       <!-- endereco Column -->
       <ng-container matColumnDef="endereco">
-        <th mat-header-cell *matHeaderCellDef> <strong>Endereço</strong> </th>
+        <th mat-header-cell *matHeaderCellDef> <strong>ENDEREÇO</strong> </th>
         <td mat-cell *matCellDef="let element"> {{ element.endereco }} </td>
       </ng-container>
 
       <!-- bairro Column -->
       <ng-container matColumnDef="bairro">
-        <th mat-header-cell *matHeaderCellDef> <strong>Bairro</strong> </th>
+        <th mat-header-cell *matHeaderCellDef> <strong>BAIRRO</strong> </th>
         <td mat-cell *matCellDef="let element"> {{ element.bairro }} </td>
       </ng-container>
 
       <!-- cidade Column -->
       <ng-container matColumnDef="cidade">
-        <th mat-header-cell *matHeaderCellDef> <strong>Cidade</strong> </th>
+        <th mat-header-cell *matHeaderCellDef> <strong>CIDADE</strong> </th>
         <td mat-cell *matCellDef="let element"> {{ element.cidade }} </td>
       </ng-container>
 
@@ -45,7 +57,7 @@
 
       <!-- email Column -->
       <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef> <strong>E-mail</strong> </th>
+        <th mat-header-cell *matHeaderCellDef> <strong>E-MAIL</strong> </th>
         <td mat-cell *matCellDef="let element"> {{ element.email }} </td>
       </ng-container>
 
