@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ColetasRoutingModule } from './coletas-routing.module';
-import { ColetasComponent } from './coletas/coletas.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { NgModule }                 from '@angular/core';
+import { CommonModule }             from '@angular/common';
+import { ColetasRoutingModule }     from './coletas-routing.module';
+import { ColetasComponent }         from './coletas/coletas.component';
+import { MatTableModule }           from '@angular/material/table';
+import { MatCardModule }            from '@angular/material/card';
+import { MatToolbarModule }         from '@angular/material/toolbar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     ColetasComponent
@@ -14,7 +15,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     ColetasRoutingModule,
     MatTableModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressSpinnerModule
   ]
 })
 export class ColetasModule { }
