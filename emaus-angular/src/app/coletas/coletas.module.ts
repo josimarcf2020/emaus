@@ -9,6 +9,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCheckboxModule }        from '@angular/material/checkbox';
 import { MatInputModule }           from '@angular/material/input';
 import { MatIconModule }            from '@angular/material/icon';
+import { MatSelectModule }            from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatIconModule }            from '@angular/material/icon';
     MatProgressSpinnerModule,
     MatCheckboxModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ]
 })
 export class ColetasModule { }

@@ -6,6 +6,17 @@
         <span>Listagem de Coletas</span>
       </div>
       <div id="pesquisa">
+        <!-- Campo de seleção do filtro -->
+        <mat-form-field>
+          <mat-label>Filtrar por:</mat-label>
+          <select matNativeControl required title="Filtro de Coletas">
+            <option value="endereco">Endereço</option>
+            <option value="bairro">Bairro</option>
+            <option value="cidade">Cidade</option>
+            <option value="uf">UF</option>
+          </select>
+        </mat-form-field>
+
         <!-- Campo de Pesquisa/Filtro -->
         <mat-form-field appearance="fill" class="search-input">
           <mat-label>Pesquisar</mat-label>
