@@ -1,8 +1,36 @@
 <mat-card appearance="outlined">
 
-  <mat-toolbar color="primary">
-    <span>Listagem de Coletas</span>
-  </mat-toolbar>
+  <div id="header">
+    <mat-toolbar color="primary" id="toolbar">
+      <div id="titulo">
+        <span>Listagem de Coletas</span>
+      </div>
+      <div id="pesquisa">
+        <!-- Campo de Pesquisa/Filtro -->
+        <mat-form-field appearance="fill" class="search-input">
+          <mat-label>Pesquisar</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filtrar coletas..." #input>
+          <!-- Ícone opcional de limpar -->
+          <button *ngIf="input.value" matSuffix mat-icon-button aria-label="Limpar" (click)="clearSearch(input)">
+            <mat-icon>close</mat-icon>
+          </button>
+          <mat-icon matSuffix *ngIf="!input.value">search</mat-icon>
+        </mat-form-field>
+      </div>
+    </mat-toolbar>
+
+    <div id="icones">
+      <div class="example-button-row">
+        <a href="#maps"><img src="assets/icons8-google-map-24.png" alt="Google Maps"></a>
+      </div>
+      <div class="example-button-row">
+          <a href="#nova"><img src="assets/icons8-novo-contato-24.png" alt="Nova coleta"></a>
+      </div>
+      <div class="example-button-row">
+        <a href="#importar"><img src="assets/icons8-baixar-24.png" alt="Importar coletas"></a>
+      </div>
+    </div>
+  </div>
 
   <div *ngIf="coletas$ | async as coletas; else loading">
 
@@ -61,6 +89,21 @@
         <td mat-cell *matCellDef="let element"> {{ element.email }} </td>
       </ng-container>
 
+      <!-- actions Column -->
+      <ng-container matColumnDef="actions">
+        <div id="actions_container">
+          <th mat-header-cell *matHeaderCellDef id="cabecalho"> <strong>AÇÕES</strong> </th>
+          <td mat-cell *matCellDef="" id="actions">
+            <div class="example-button-row">
+              <a href="#edit"><img src="assets/edit.png" alt="Edit"></a>
+            </div>
+            <div class="example-button-row">
+                <a href="#delete"><img src="assets/delete.png" alt="Delete"></a>
+            </div>
+          </td>
+        </div>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
@@ -73,6 +116,3 @@
   </ng-template>
 
 </mat-card>
-
-
-

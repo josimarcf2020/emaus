@@ -3,6 +3,7 @@ import { Component, OnInit }     from '@angular/core';
 import { Coletas }               from '../model/coletas';
 import { catchError, Observable, of, tap }       from 'rxjs';
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-coletas',
@@ -13,7 +14,9 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 export class ColetasComponent implements OnInit {
 
   coletas$: Observable<Coletas[]>;
-  displayedColumns = ['select','endereco', 'bairro', 'cidade', 'uf'];
+  dataSource = new MatTableDataSource<Coletas>();
+
+  displayedColumns: string[] = ['select','endereco', 'bairro', 'cidade', 'uf', 'actions'];
 
   constructor(private ColetasServiceService: ColetasServiceService) {
     this.coletas$ = this.ColetasServiceService.coletas_list().pipe(
@@ -25,6 +28,24 @@ export class ColetasComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.coletas$.subscribe(coletas => {
+      this.dataSource.data = coletas;
+    },
+    error => {
+      console.log('Erro ao carregar coletas', error);
+    });
+  }
+
+  // Método chamado pelo input de filtro
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase(); // Aplica o filtro ao dataSource
+  }
+
+  // Método para limpar o campo de busca
+  clearSearch(input: HTMLInputElement) {
+    input.value = '';
+    this.dataSource.filter = ''; // Limpa o filtro no dataSource
   }
 
   // Método para lidar com a mudança do checkbox

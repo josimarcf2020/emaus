@@ -6,7 +6,9 @@ import { MatTableModule }           from '@angular/material/table';
 import { MatCardModule }            from '@angular/material/card';
 import { MatToolbarModule }         from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCheckboxModule }        from '@angular/material/checkbox';
+import { MatInputModule }           from '@angular/material/input';
+import { MatIconModule }            from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCardModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatInputModule,
+    MatIconModule
   ]
 })
 export class ColetasModule { }
